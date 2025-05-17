@@ -3,10 +3,38 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css" />
-    <title>Avengers app</title>
+    <title>Avenger-3</title>
   </head>
   <body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand text-white" href="index.html">The Avengers</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item"><a class="nav-link text-white" href="index.html">Home</a></li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">Characters</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item text-white" href="avenger-1.html">Avenger 1</a></li>
+                  <li><a class="dropdown-item text-white" href="avenger-2.html">Avenger 2</a></li>
+                  <li><a class="dropdown-item text-white active" href="avenger-3.html">Avenger 3</a></li>
+                  <li><a class="dropdown-item text-white" href="avenger-4.html">Avenger 4</a></li>
+                  <li><a class="dropdown-item text-white" href="avenger-5.html">Avenger 5</a></li>
+                  <li><a class="dropdown-item text-white" href="avenger-6.html">Avenger 6</a></li>
+                </ul>
+              </li>
+              <li class="nav-item"><a class="nav-link text-white" href="About.html">About</a></li>
+              <li class="nav-item"><a class="nav-link text-white" href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
     <h2>Hulk</h2>
     <div class="gallery">
         <img src="/images/avengers_03.jpg" />
@@ -24,5 +52,6 @@
         <p><b>Power:</b> 52%</p> 
         <p><b>Combat:</b> 85%</p>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
