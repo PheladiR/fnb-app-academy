@@ -73,3 +73,15 @@ bottom: 0;
 .map{
     width: 100%;
 }
+
+/*Animals section*/
+
+.bg-image{
+    background-image: url("/images/map.png");
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+    height: 100%;
+    background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
