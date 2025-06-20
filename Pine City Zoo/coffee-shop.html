@@ -22,14 +22,35 @@
 
 
   <!-- Main Content -->
-  <div class="main-home">
-    <img src="src/images/map.png"class="map" alt="Zoo Map" />
+<div id="main">
+    <div id="content">
+      <div id="info-box-full">
+        <img class="places" src="src/images/coffee-shop.jpg">
+
+        <h3>WILD THINGS COFFEE SHOP</h3>
+<p>Come and relax with a fragrant, freshly-brewed cuppa at Wild Things</p>
+<p>They also serve a variety of sandwiches, confectionery and desserts, in case you're peckish!</p>
+        <strong><p>WHERE WILL YOU FIND IT</p></strong>
+    <p>Wild Things is at the main Food Court</p>
+      </div>
+    </div>
   </div>
+
 
   <!-- Bottom Menu -->
   <div class="bottom-menu">
     <a href="#" class="weather">Weather</a>
     <a href="#" class="feedback">Feedback</a>
   </div>
-</body>
+  <script>
+    function toggleElephantVideo() {
+      const video = document.querySelector(".video-square");
+      if (video.paused) {
+        video.play();
+      } else {
+        video.pause();
+      }
+    }
+  </script>
+  </body>
 </html>
