@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="src/style.css" />
+  <title>Pine City Zoo</title>
+</head>
+<body>
+  <!-- Logo Section -->
+  <div class="header">
+    <img src="src/images/logo.png" alt="Pine City Zoo Logo" />
+  </div>
+
+    <div id="top-menu">
+        <nav>
+            <a href="animals.html">Animals</a>
+            <a href="index.html">Map</a>
+            <a href="#">Places</a>
+        </nav>
+    </div>
+
+
+  <!-- Main Content -->
+<div id="main">
+    <div id="content">
+      <div id="info-box-full">
+        <video class="video-square" controls autoplay muted loop>
+            <source src="src/videos/elephant.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        <h3>ELEPHANTS</h3>
+        <p>Elephants are large mammals of the family Elephantidae and the order Proboscidea. Two species are traditionally recognised, the African elephant (Loxodonta africana) and the Asian elephant (Elephas maximus)...</p>
+        <p>All elephants have several distinctive features, the most notable of which is a long trunk or proboscis...</p>
+        <p>Elephants are herbivorous and can be found in different habitats including savannahs, forests, deserts and marshes.</p>
+        <strong><p>WHERE WILL YOU FIND THEM</p></strong>
+        <p>You will find the elephants at pen E22, right next to the amphitheatre.</p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Bottom Menu -->
+  <div class="bottom-menu">
+    <a href="#" class="weather">Weather</a>
+    <a href="#" class="feedback">Feedback</a>
+  </div>
+  <script>
+    function toggleElephantVideo() {
+      const video = document.querySelector(".video-square");
+      if (video.paused) {
+        video.play();
+      } else {
+        video.pause();
+      }
+    }
+  </script>
+  </body>
+</html>

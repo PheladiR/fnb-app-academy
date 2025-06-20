@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="src/style.css" />
+  <title>Pine City Zoo</title>
+</head>
+<body>
+  <!-- Logo Section -->
+  <div class="header">
+    <img src="src/images/logo.png" alt="Pine City Zoo Logo" />
+  </div>
+
+    <div id="top-menu">
+        <nav>
+            <a href="animals.html">Animals</a>
+            <a href="index.html">Map</a>
+            <a href="#">Places</a>
+        </nav>
+    </div>
+
+  <!-- Main Content -->
+<div id="main">
+    <div id="content">
+      <div id="info-box-full">
+        <video class="video-square" controls autoplay muted loop>
+          <source src="src/videos/monkey.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        
+        <h3>Young Barbay Macaques Monkeys</h3>
+<p>Barbary macaques are small, intelligent primates native to the mountainous forests of North Africa. They are one of the few monkey species that live outside of tropical regions and the only species of macaque found outside Asia. With their expressive eyes, golden-brown fur, and strong limbs, they are excellent climbers and spend time both in trees and on the ground. These monkeys are highly social and live in close-knit groups that show remarkable cooperation and care for one another.</p>
+<p>Young macaques, like the one shown in the video, are especially curious and playful. They often engage in grooming, wrestling, and exploring their environment under the watchful eye of adults. Their diet consists mainly of fruits, seeds, and leaves, but they can also eat insects and small creatures. These monkeys are known for their adaptability and intelligence; they use vocalizations, facial expressions, and gestures to communicate with one another, making them one of the most expressive primates in the animal kingdom.</p>
+      <strong><p>WHERE WILL YOU FIND THEM</p></strong>
+        <p>You will find the monkeys at the monkey cage near the Monkey Trail.</p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Bottom Menu -->
+  <div class="bottom-menu">
+    <a href="#" class="weather">Weather</a>
+    <a href="#" class="feedback">Feedback</a>
+  </div>
+  <script>
+    function toggleElephantVideo() {
+      const video = document.querySelector(".video-square");
+      if (video.paused) {
+        video.play();
+      } else {
+        video.pause();
+      }
+    }
+  </script>
+  </body>
+</html>
