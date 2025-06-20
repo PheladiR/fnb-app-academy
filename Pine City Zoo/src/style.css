@@ -241,7 +241,7 @@ html, body {
   height: 100%;
 }
 #main, .map {
-  min-height: calc(120vh - 140px);
+  min-height: calc(100vh - 80px);
   box-sizing: border-box;
   padding-bottom: 80px; 
 }
