@@ -240,11 +240,19 @@ cursor: pointer;
 html, body {
   height: 100%;
 }
-#main, .map {
+#main {
+  min-height: calc(100vh - 80px);
+  box-sizing: border-box;
+  padding-bottom: 80px; 
+}
+.map {
+  min-height: calc(100vh - 80px);
+  box-sizing: border-box;
+  padding-bottom: 80px; 
+  position: fixed;.map {
   min-height: calc(100vh - 80px);
   box-sizing: border-box;
   padding-bottom: 80px; 
   position: fixed;
 }
-
 }
