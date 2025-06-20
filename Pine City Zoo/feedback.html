@@ -20,13 +20,13 @@
   <div id="main">
     <div id="content">
       <div id="info-box-full">
-        <img src="src/images/giraffe-large.jpg" alt="Giraffe" style="width: 100%; border-radius: 10px;" />
+        <img src="src/images/giraffe-large.jpg" alt="Giraffe" class="feedback-img" />
         <h3>WE'D LOVE TO HEAR FROM YOU</h3>
         <p>We always strive to do our best, so your feedback is very important to us. Please fill in the form below.</p>
 
         <form class="form" onsubmit="handleSubmit(event)">
-          <input id="input" type="text" id="name" name="name" placeholder="Your name" required /><br><br>
-          <input  id="input" type="email" id="email" name="email" placeholder="Your email" required /><br><br>
+          <input type="text" id="name" name="name" class="name" placeholder="Your name" autocomplete="name" required /><br><br>
+          <input type="email" id="email" name="email" class="email" placeholder="Your email" autocomplete="email" required /><br><br>
           <textarea name="message" placeholder="Type your message here..." rows="5" required></textarea><br><br>
           <button type="submit" class="button">SUBMIT</button>
         </form>
