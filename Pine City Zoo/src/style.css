@@ -224,7 +224,7 @@ video::-webkit-media-controls-mute-button {
     font-size: medium;
   }
 .info-box p{
-font-size: small;
+font-size: 12px;
 }
 
 .info-box img:hover{
@@ -240,8 +240,8 @@ cursor: pointer;
 html, body {
   height: 100%;
 }
-#main {
-  min-height: calc(100vh - 120px);
+#main, .map {
+  min-height: calc(120vh - 140px);
   box-sizing: border-box;
   padding-bottom: 80px; 
 }
