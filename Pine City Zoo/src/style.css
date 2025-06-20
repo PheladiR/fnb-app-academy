@@ -191,3 +191,20 @@ bottom: 0;
     display: none !important;
   }
   
+  .weather{
+    padding: 2px;
+  }
+  
+  #input, textarea{
+    padding: 10px;
+    width: 95%;
+    border-radius: 10px;
+  }
+
+  .button{
+    padding: 10px;
+    margin-left: 200px;
+    border-radius: 10px;
+    background-color: #572800;
+    color: beige;
+  }
