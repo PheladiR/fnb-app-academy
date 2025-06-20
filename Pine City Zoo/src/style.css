@@ -202,8 +202,7 @@ video::-webkit-media-controls-mute-button {
 /***************responsive****************************/
 
 @media screen and (max-width: 768px) {
-  /* Adjust info box to be taller and stack nicely */
-  .info-box {
+.info-box {
     height: auto;
     display: flex;
     flex-direction: row;
@@ -216,27 +215,25 @@ video::-webkit-media-controls-mute-button {
     margin: 5px;
   }
 
-  .info-box h3, .info-box p {
+  /*.info-box h3, .info-box p {
     width: 100%;
     margin: 5px 10px;
     text-align: left;
-  }
+  }*/
   .info-box h3{
-    font-size: 16px;
+    font-size: medium;
   }
 .info-box p{
-font-size: 12px;
+font-size: small;
 }
 
 .info-box img:hover{
 cursor: pointer;
 }
-img.right{
+.right{
   display: none;
 }
-.feedback-heading{
-  font-size: 20px !important;
-}
+
 .header img{
   height : 50px;
 }
