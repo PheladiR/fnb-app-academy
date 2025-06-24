@@ -202,7 +202,7 @@ video::-webkit-media-controls-mute-button {
 /***************responsive****************************/
 
 @media screen and (max-width: 768px) {
-.info-box {
+  .info-box {
     height: auto;
     display: flex;
     flex-direction: row;
@@ -254,5 +254,6 @@ html, body {
   box-sizing: border-box;
   padding-bottom: 80px; 
   position: fixed;
+}
 }
 }
