@@ -1,103 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="src/style.css">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="src/style.css" />
+  <title>Calculator app</title>
 </head>
 <body>
+  <div class="calculator">
     <table>
-<tr>
-    <td colspan="4">
-      <input type="text" id="inputBox" value="0"/>
-    </td>
-</tr>
-<tr>
-    <td onclick="digitalBtnPressed(7)">7</td>
-    <td onclick="digitalBtnPressed(8)">8</td>
-    <td onclick="digitalBtnPressed(9)">9</td>
-    <td onclick='operatorBtnPressed("*")'>x</td>
-</tr>
-<tr>
-    <td onclick="digitalBtnPressed(4)">4</td>
-    <td onclick="digitalBtnPressed(5)">5</td>
-    <td onclick="digitalBtnPressed(6)">6</td>
-    <td onclick='operatorBtnPressed("-")'>-</td>
-</tr>
-<tr>
-    <td onclick="digitalBtnPressed(1)">1</td>
-    <td onclick="digitalBtnPressed(2)">2</td>
-    <td onclick="digitalBtnPressed(3)">3</td>
-    <td onclick='operatorBtnPressed("+")'>+</td>
-</tr>
-<tr>
-    <td colspan="2" onclick='digitalBtnPressed(0)'>0</td>
-    <td onclick="btnAcPressed()">AC</td>
-    <td onclick='operatorBtnPressed("/")'>/</td>
-</tr>
-<tr>
-    <td colspan="4" onclick='equalsBtnPressed("=")'>=</td>
-</tr>
+      <tr>
+        <td colspan="4" id="screen">
+          <input type="text" id="inputBox" value="0" />
+        </td>
+      </tr>
+      <tr>
+        <td class="acBtn" onclick="btnAcPressed()">AC</td>
+        <td class="operatorBtn" onclick="percentBtnPressed()">%</td>
+        <td class="operatorBtn" onclick="sqrtBtnPressed()">√</td>
+        <td class="operatorBtn" onclick='operatorBtnPressed("/")' id="division">/</td>
+      </tr>
+      <tr>
+        <td class="digitalBtn" onclick="digitalBtnPressed(7)">7</td>
+        <td class="digitalBtn" onclick="digitalBtnPressed(8)">8</td>
+        <td class="digitalBtn" onclick="digitalBtnPressed(9)">9</td>
+        <td class="operatorBtn" onclick='operatorBtnPressed("*")' id="multiply">x</td>
+      </tr>
+      <tr>
+        <td class="digitalBtn" onclick="digitalBtnPressed(4)">4</td>
+        <td class="digitalBtn" onclick="digitalBtnPressed(5)">5</td>
+        <td class="digitalBtn" onclick="digitalBtnPressed(6)">6</td>
+        <td class="operatorBtn" onclick='operatorBtnPressed("-")' id="minus">-</td>
+      </tr>
+      <tr>
+        <td class="digitalBtn" onclick="digitalBtnPressed(1)">1</td>
+        <td class="digitalBtn" onclick="digitalBtnPressed(2)">2</td>
+        <td class="digitalBtn" onclick="digitalBtnPressed(3)">3</td>
+        <td class="operatorBtn" onclick='operatorBtnPressed("+")' id="plus" rowspan="2">+</td>
+      </tr>
+      <tr>
+        <td class="digitalBtn" onclick="digitalBtnPressed(0)">0</td>
+        <td class="digitalBtn" onclick='decimalPressed()'>.</td>
+        <td class="equalBtn" onclick='equalsBtnPressed()'>=</td>
+      </tr>
     </table>
-    <script>
-        var newLine = true // what user types will be on a new line
-       var value1;
-       var currentOperator;
+  </div>
+  <script>
+    let newLine = true;
+    let value1 = null;
+    let currentOperator = null;
 
-       function digitalBtnPressed(button) {
-    let inputBox = document.getElementById("inputBox");
-
-    if (newLine) {
+    function digitalBtnPressed(button) {
+      let inputBox = document.getElementById("inputBox");
+      if (newLine || inputBox.value === "0") {
         inputBox.value = button;
         newLine = false;
-    } else {
-        let currentValue = inputBox.value;
-        if (currentValue === "0" && button !== "0") {
-            inputBox.value = button;
-        } else {
-            inputBox.value = currentValue + button;
-        }
+      } else {
+        inputBox.value += button;
+      }
     }
-}
 
-        function btnAcPressed(){
-            document.getElementById("inputBox").value = 0;
-            newLine = true;
-        }
-
-        function operatorBtnPressed(operator){
-            currentOperator = operator;
-            value1 = parseInt(document.getElementById("inputBox").value);
-            newLine = true;
-        }
-
-        function equalsBtnPressed(operator){
-            
-            value2 = parseInt(document.getElementById("inputBox").value);
-            var finalTotal;
-
-            switch(currentOperator){
-                case "+": 
-                finalTotal = value1 + value2;
-                break;
-                case "-": 
-                finalTotal = value1 - value2;
-                break;
-                case "*": 
-                finalTotal = value1 *  value2;
-                break;
-
-                case "/": 
-                finalTotal = value1 / value2;
-                break;
-            }
-
-        document.getElementById("inputBox").value = finalTotal;
-        value1=0;
-        newLine = true;
+    function decimalPressed() {
+      let inputBox = document.getElementById("inputBox");
+      if (newLine) {
+        inputBox.value = "0.";
+        newLine = false;
+      } else if (!inputBox.value.includes(".")) {
+        inputBox.value += ".";
+      }
     }
-    </script>
-    
+
+    function btnAcPressed() {
+      document.getElementById("inputBox").value = "0";
+      newLine = true;
+      value1 = null;
+      currentOperator = null;
+    }
+
+    function percentBtnPressed() {
+      let inputBox = document.getElementById("inputBox");
+      let val = parseFloat(inputBox.value);
+      inputBox.value = (val / 100).toString();
+      newLine = true;
+    }
+
+    function sqrtBtnPressed() {
+      let inputBox = document.getElementById("inputBox");
+      let val = parseFloat(inputBox.value);
+      inputBox.value = Math.sqrt(val).toFixed(6);
+      newLine = true;
+    }
+
+    function operatorBtnPressed(operator) {
+      value1 = parseFloat(document.getElementById("inputBox").value);
+      currentOperator = operator;
+      newLine = true;
+    }
+
+    function equalsBtnPressed() {
+      let value2 = parseFloat(document.getElementById("inputBox").value);
+      let result;
+
+      if (currentOperator === null || value1 === null) {
+        return;
+      }
+
+      switch (currentOperator) {
+        case "+":
+          result = value1 + value2;
+          break;
+        case "-":
+          result = value1 - value2;
+          break;
+        case "*":
+          result = value1 * value2;
+          break;
+        case "/":
+          result = value2 !== 0 ? (value1 / value2) : "Error";
+          break;
+        default:
+          result = value2;
+      }
+
+      document.getElementById("inputBox").value = isNaN(result) ? "Error" : result.toString();
+      value1 = null;
+      currentOperator = null;
+      newLine = true;
+    }
+  </script>
 </body>
 </html>
+
